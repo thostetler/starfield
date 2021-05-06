@@ -1,11 +1,15 @@
 const MAX_STARS = 10000;
+const urlParams = new URLSearchParams(window.location.search);
+let {
+  width=500,
+  height=500,
+  stars=1000
+} = urlParams;
 
-document.write(`<canvas id="field" width="1920" height="1080"></canvas>`);
+document.write(`<canvas id="field" width="${width}" height="${height}"></canvas>`);
 
 const field = document.getElementById("field");
 const ctx = field.getContext("2d");
-const { width, height } = field.getBoundingClientRect();
-
 const getRan = (min, max) => Math.random() * (max - min) + min;
 
 const addStar = (x, y, brightness = getRan(10, 100)) => {
