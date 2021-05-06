@@ -1,10 +1,7 @@
-const MAX_STARS = 10000;
 const urlParams = new URLSearchParams(window.location.search);
-let {
-  width=500,
-  height=500,
-  stars=1000
-} = urlParams;
+const height = urlParams.get("height");
+const width = urlParams.get("width");
+const MAX_STARS = urlParams.get("stars");
 
 document.write(`<canvas id="field" width="${width}" height="${height}"></canvas>`);
 
