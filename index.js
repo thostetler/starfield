@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
-const height = urlParams.get("height");
-const width = urlParams.get("width");
-const MAX_STARS = urlParams.get("stars");
+const height = urlParams.get("height") || 500;
+const width = urlParams.get("width") || 500;
+const MAX_STARS = urlParams.get("stars") || 500;
 
 document.write(`<canvas id="field" width="${width}" height="${height}"></canvas>`);
 
